@@ -1,11 +1,49 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import { viteSingleFile } from "vite-plugin-singlefile";
+import { FAQS } from "./src/lib/faq";
+
+const SITE = "https://verifactu.camilab.es/";
+
+// Los datos estructurados se generan a partir de las mismas preguntas frecuentes que
+// muestra la página, así Google y la web nunca dicen cosas distintas.
+function structuredData(): Plugin {
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        name: "¿Me toca Verifactu?",
+        url: SITE,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        inLanguage: "es-ES",
+        isAccessibleForFree: true,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+        author: { "@type": "Person", name: "Juan Camilo Zúñiga", url: "https://camilab.es/" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: FAQS.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+  return {
+    name: "structured-data",
+    transformIndexHtml: () => [
+      { tag: "script", attrs: { type: "application/ld+json" }, children: JSON.stringify(graph), injectTo: "head" },
+    ],
+  };
+}
 
 // `npm run build:single` genera un único index.html autocontenido (útil para demos).
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), ...(mode === "single" ? [viteSingleFile()] : [])],
+  plugins: [react(), structuredData(), ...(mode === "single" ? [viteSingleFile()] : [])],
   build: mode === "single" ? { outDir: "dist-single" } : undefined,
   test: { environment: "node" },
 }));

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verifactu.camilab.es/sitemap.xml

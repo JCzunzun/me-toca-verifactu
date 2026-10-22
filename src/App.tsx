@@ -36,6 +36,9 @@ export default function App() {
             Cada respuesta del test muestra una huella que encadena con la anterior, igual que Verifactu encadena cada
             factura con la previa. Aquí es solo ilustrativa.
           </p>
+          <p>
+            Hecho por Juan Camilo Zúñiga · <a href="https://camilab.es">camilab.es</a>
+          </p>
         </div>
       </footer>
     </>
