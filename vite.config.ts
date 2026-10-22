@@ -24,6 +24,17 @@ function structuredData(): Plugin {
         author: { "@type": "Person", name: "Juan Camilo Zúñiga", url: "https://camilab.es/" },
       },
       {
+        "@type": "WebPage",
+        "@id": SITE,
+        url: SITE,
+        name: "¿Me toca Verifactu? Comprueba si te afecta y tu fecha límite",
+        inLanguage: "es-ES",
+        dateModified: "2026-10-23",
+        primaryImageOfPage: SITE + "og.png",
+        isPartOf: { "@type": "WebSite", name: "Camilab", url: "https://camilab.es/" },
+        about: { "@type": "Thing", name: "Verifactu" },
+      },
+      {
         "@type": "FAQPage",
         mainEntity: FAQS.map((f) => ({
           "@type": "Question",

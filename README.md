@@ -24,7 +24,7 @@ npm install
 npm run dev           # desarrollo
 npm test              # tests de la lógica
 npm run format        # formato con Prettier
-npm run build         # build estática en dist/
+npm run build         # build estática en dist/, con el HTML pre-renderizado para SEO
 npm run build:single  # un único index.html autocontenido en dist-single/
 ```
 

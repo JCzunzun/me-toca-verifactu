@@ -7,8 +7,8 @@ export function Hero({ onStart }: { onStart: () => void }) {
         <div className="hero-copy">
           <h1>¿Me toca Verifactu?</h1>
           <p className="lede">
-            Hacienda cambia cómo deben registrarse las facturas. Responde unas pocas preguntas y te digo si te afecta,
-            desde cuándo y qué tienes que hacer.
+            Hacienda cambia cómo deben registrar sus facturas los autónomos y las empresas. Responde unas pocas
+            preguntas y te digo si te afecta, desde cuándo y qué tienes que hacer.
           </p>
           <div className="hero-actions">
             <button type="button" className="btn primary big" onClick={onStart}>
