@@ -2,7 +2,7 @@
 export const CONTACT = {
   name: "Juan Zúñiga",
   role: "Desarrollo e integraciones de facturación",
-  email: "",
+  email: "juancamilozng@gmail.com",
 };
 
 // Fecha en la que se contrastaron plazos y exclusiones con la normativa vigente.
