@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { FaqList } from "./components/FaqList";
+import { GuideLinks } from "./components/GuideLinks";
 import { Hero } from "./components/Hero";
 import { Quiz } from "./components/Quiz";
 import { Timeline } from "./components/Timeline";
@@ -21,6 +22,7 @@ export default function App() {
         <Quiz ref={quiz} interacted={interacted} onInteract={() => setInteracted(true)} onRestart={goToQuiz} />
         <Timeline />
         <FaqList />
+        <GuideLinks />
       </main>
       <footer className="footer">
         <div className="wrap">
