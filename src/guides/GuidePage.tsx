@@ -93,6 +93,9 @@ export function GuidePage({ guide }: { guide: Guide }) {
             Tributaria.
           </p>
           <p>
+            Otra herramienta: <a href="https://tarifa.camilab.es">¿Cuánto cobrar por hora como autónomo?</a>
+          </p>
+          <p>
             Hecho por Juan Camilo Zúñiga · <a href="https://camilab.es">camilab.es</a>
           </p>
         </div>
